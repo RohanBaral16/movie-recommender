@@ -11,14 +11,14 @@ import { createClient } from "@supabase/supabase-js";
 //   dangerouslyAllowBrowser: true
 // });
 
-if(!process.env.GEMINI_API) throw new Error("OpenAI API key is missing or invalid.");
+if(!import.meta.env.VITE_GEMINI_API) throw new Error("OpenAI API key is missing or invalid.");
 export const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API,
+  apiKey: import.meta.env.VITE_GEMINI_API,
 })
 
 /** Supabase config */
-const privateKey = process.env.SUPABASE_API_KEY;
+const privateKey = import.meta.env.VITE_SUPABASE_API_KEY;
 if (!privateKey) throw new Error(`Expected env var SUPABASE_API_KEY`);
-const url = process.env.SUPABASE_URL;
+const url = import.meta.env.VITE_SUPABASE_URL;
 if (!url) throw new Error(`Expected env var SUPABASE_URL`);
 export const supabase = createClient(url, privateKey);

@@ -7,10 +7,17 @@
     <body>
         <main>
             <form id="app-input">
-                <label>
-                    
-                </labeL>
+                <label for="query-1">What's your favorite move and why?</label>
+                <textarea maxlength="150" rows="4" type="text" name="query-1"></textarea>
+                <label  for="query-2">Are you in the mood for something new or a classic?</label>
+                <textarea maxlength="50" rows="4"  type="text" name="query-2"></textarea>
+                <label for="query-3">Do you wanna have fun or do you want something serious?</label>
+                <textarea maxlength="50" rows="4" type="text" name="query-3"></textarea>
+                <button type="submit">Go</button>
             </form>
+            <section id="output-section">
+                <p id="output-here">Answer the questions.</p>
+            </section>
         </main>
         <script type="module" src="index.js"></script>
     </body>
